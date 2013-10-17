@@ -1,5 +1,5 @@
 /*
-Copyright 2011 Sleepless Software Inc. All rights reserved.
+Copyright 2013 Sleepless Software Inc. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to
@@ -22,12 +22,12 @@ IN THE SOFTWARE.
 
 // yes, I know this seems stupid, but I have my reasons.
 
-module.exports = function(s) {
-	var m = require(s)
-	for(k in m) {
-		if(k.length >= 4) {
-			global[k] = m[k]
-		}
+module.exports = function(o) {
+	if(typeof o !== "object") {
+		o = require(o)
+	}
+	for(k in o) {
+		global[k] = o[k]
 	}
 }
 

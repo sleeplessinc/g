@@ -1,9 +1,7 @@
 
-var globalize = require("./index.js")
-
-globalize("util")
-
-console.log(typeof inspect)
-console.log(typeof log)
+var g = require("./index.js")
+g(console)
+g("util")
+log(inspect({foo:"woot!",baz:7}));
 
 
