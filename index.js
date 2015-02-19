@@ -21,13 +21,14 @@ IN THE SOFTWARE.
 */
 
 
-G = function(o) {
-	if(typeof o !== "object") {
-		o = require(o)
+G = function(mod) {
+	if(typeof mod === "string") {
+		mod = require(mod)
 	}
-	for(k in o) {
-		global[k] = o[k]
+	for(k in mod) {
+		global[k] = mod[k]
 	}
+	return mod
 }
 
 
