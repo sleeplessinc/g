@@ -20,9 +20,8 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE. 
 */
 
-// yes, I know this seems stupid, but I have my reasons.
 
-module.exports = function(o) {
+G = function(o) {
 	if(typeof o !== "object") {
 		o = require(o)
 	}
@@ -31,4 +30,16 @@ module.exports = function(o) {
 	}
 }
 
+
+
+if((typeof process) !== 'undefined') {
+	// we're in node.js (versus browser)
+	module.exports = G
+
+	if(require && require.main === module) {
+		// this module is being executed directly
+		require('./test.js')
+	}
+
+}
 
