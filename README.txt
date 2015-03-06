@@ -1,16 +1,12 @@
 
-Yes, I know this seems stupid, but I find it handy.
+Let's you easily get some module functions made into globals:
 
+    require("g")("util");
+	inspect(["foo"]);
 
-It lets me do things like:
-
-    require("g")("log5");
-
-so that I can easily get some module functions made into globals:
+or
 
     require("g")("log5");
-
 	I("Hi mom");
-
 
 
