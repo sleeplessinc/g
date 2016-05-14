@@ -38,7 +38,7 @@ if((typeof process) !== 'undefined') {
 	module.exports = G
 
 	if(require && require.main === module) {
-		// this module is being executed directly
+		// this module is being executed directly; run test
 		require('./test.js')
 	}
 
